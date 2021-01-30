@@ -1,6 +1,6 @@
 const createNewBoard = (
-  boardWidth: number,
   boardHeight: number,
+  boardWidth: number,
 ): {
   isBomb: boolean
   clicked: boolean
@@ -11,7 +11,7 @@ const createNewBoard = (
     return new Array(boardWidth).fill(0).map(() => ({
       isBomb: false,
       clicked: false,
-      id: '1',
+      id: '',
       flagged: false,
     }))
   })
