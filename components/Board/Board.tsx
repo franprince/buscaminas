@@ -12,8 +12,8 @@ type Props = {
 }
 
 const Board: React.FunctionComponent<Props> = ({
-  boardWidth,
   boardHeight,
+  boardWidth,
 }: Props) => {
   const [board, setBoard] = useState([])
   useEffect(() => {
