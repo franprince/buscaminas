@@ -1,0 +1,768 @@
+{
+  "/home/fran/dev/buscaminas/components/Square.tsx": {
+    "path": "/home/fran/dev/buscaminas/components/Square.tsx",
+    "statementMap": {
+      "0": {
+        "start": {"line": 18, "column": 24},
+        "end": {"line": 25, "column": 1}
+      },
+      "1": {
+        "start": {"line": 24, "column": 23},
+        "end": {"line": 24, "column": 48}
+      },
+      "2": {
+        "start": {"line": 27, "column": 15},
+        "end": {"line": 49, "column": 1}
+      },
+      "3": {
+        "start": {"line": 28, "column": 32},
+        "end": {"line": 28, "column": 47}
+      },
+      "4": {
+        "start": {"line": 29, "column": 22},
+        "end": {"line": 38, "column": 3}
+      },
+      "5": {
+        "start": {"line": 30, "column": 4},
+        "end": {"line": 37, "column": 5}
+      },
+      "6": {
+        "start": {"line": 31, "column": 6},
+        "end": {"line": 31, "column": 13}
+      },
+      "7": {
+        "start": {"line": 33, "column": 6},
+        "end": {"line": 33, "column": 23}
+      },
+      "8": {
+        "start": {"line": 34, "column": 6},
+        "end": {"line": 36, "column": 7}
+      },
+      "9": {
+        "start": {"line": 35, "column": 8},
+        "end": {"line": 35, "column": 27}
+      },
+      "10": {
+        "start": {"line": 39, "column": 2},
+        "end": {"line": 48, "column": 4}
+      },
+      "11": {
+        "start": {"line": 43, "column": 21},
+        "end": {"line": 43, "column": 40}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 24, "column": 11},
+          "end": {"line": 24, "column": 12}
+        },
+        "loc": {
+          "start": {"line": 24, "column": 23},
+          "end": {"line": 24, "column": 48}
+        },
+        "line": 24
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {"line": 27, "column": 15},
+          "end": {"line": 27, "column": 16}
+        },
+        "loc": {
+          "start": {"line": 27, "column": 51},
+          "end": {"line": 49, "column": 1}
+        },
+        "line": 27
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {"line": 29, "column": 22},
+          "end": {"line": 29, "column": 23}
+        },
+        "loc": {
+          "start": {"line": 29, "column": 43},
+          "end": {"line": 38, "column": 3}
+        },
+        "line": 29
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {"line": 43, "column": 15},
+          "end": {"line": 43, "column": 16}
+        },
+        "loc": {
+          "start": {"line": 43, "column": 21},
+          "end": {"line": 43, "column": 40}
+        },
+        "line": 43
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {"line": 24, "column": 23},
+          "end": {"line": 24, "column": 48}
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {"line": 24, "column": 38},
+            "end": {"line": 24, "column": 43}
+          },
+          {
+            "start": {"line": 24, "column": 46},
+            "end": {"line": 24, "column": 48}
+          }
+        ],
+        "line": 24
+      },
+      "1": {
+        "loc": {
+          "start": {"line": 30, "column": 4},
+          "end": {"line": 37, "column": 5}
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {"line": 30, "column": 4},
+            "end": {"line": 37, "column": 5}
+          },
+          {
+            "start": {"line": 30, "column": 4},
+            "end": {"line": 37, "column": 5}
+          }
+        ],
+        "line": 30
+      },
+      "2": {
+        "loc": {
+          "start": {"line": 34, "column": 6},
+          "end": {"line": 36, "column": 7}
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {"line": 34, "column": 6},
+            "end": {"line": 36, "column": 7}
+          },
+          {
+            "start": {"line": 34, "column": 6},
+            "end": {"line": 36, "column": 7}
+          }
+        ],
+        "line": 34
+      },
+      "3": {
+        "loc": {
+          "start": {"line": 46, "column": 7},
+          "end": {"line": 46, "column": 47}
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {"line": 46, "column": 16},
+            "end": {"line": 46, "column": 20}
+          },
+          {
+            "start": {"line": 46, "column": 23},
+            "end": {"line": 46, "column": 47}
+          }
+        ],
+        "line": 46
+      },
+      "4": {
+        "loc": {
+          "start": {"line": 46, "column": 23},
+          "end": {"line": 46, "column": 47}
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {"line": 46, "column": 37},
+            "end": {"line": 46, "column": 39}
+          },
+          {
+            "start": {"line": 46, "column": 42},
+            "end": {"line": 46, "column": 47}
+          }
+        ],
+        "line": 46
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 25,
+      "2": 1,
+      "3": 25,
+      "4": 25,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 25,
+      "11": 0
+    },
+    "f": {"0": 25, "1": 25, "2": 0, "3": 0},
+    "b": {
+      "0": [15, 10],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [15, 10],
+      "4": [5, 5]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "b812de2f71ea1ff66ed47376fcf0c2cc8533c4f0"
+  },
+  "/home/fran/dev/buscaminas/components/Board/Board.tsx": {
+    "path": "/home/fran/dev/buscaminas/components/Board/Board.tsx",
+    "statementMap": {
+      "0": {
+        "start": {"line": 14, "column": 14},
+        "end": {"line": 60, "column": 1}
+      },
+      "1": {
+        "start": {"line": 15, "column": 28},
+        "end": {"line": 15, "column": 40}
+      },
+      "2": {
+        "start": {"line": 16, "column": 2},
+        "end": {"line": 27, "column": 32}
+      },
+      "3": {
+        "start": {"line": 17, "column": 22},
+        "end": {"line": 17, "column": 46}
+      },
+      "4": {
+        "start": {"line": 18, "column": 27},
+        "end": {"line": 18, "column": 52}
+      },
+      "5": {
+        "start": {"line": 19, "column": 21},
+        "end": {"line": 19, "column": 60}
+      },
+      "6": {
+        "start": {"line": 20, "column": 27},
+        "end": {"line": 25, "column": 5}
+      },
+      "7": {
+        "start": {"line": 26, "column": 4},
+        "end": {"line": 26, "column": 29}
+      },
+      "8": {
+        "start": {"line": 29, "column": 2},
+        "end": {"line": 59, "column": 4}
+      },
+      "9": {
+        "start": {"line": 35, "column": 12},
+        "end": {"line": 54, "column": 14}
+      },
+      "10": {
+        "start": {"line": 40, "column": 35},
+        "end": {"line": 40, "column": 61}
+      },
+      "11": {
+        "start": {"line": 42, "column": 16},
+        "end": {"line": 52, "column": 18}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 14, "column": 14},
+          "end": {"line": 14, "column": 15}
+        },
+        "loc": {
+          "start": {"line": 14, "column": 54},
+          "end": {"line": 60, "column": 1}
+        },
+        "line": 14
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {"line": 16, "column": 12},
+          "end": {"line": 16, "column": 13}
+        },
+        "loc": {
+          "start": {"line": 16, "column": 18},
+          "end": {"line": 27, "column": 3}
+        },
+        "line": 16
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {"line": 34, "column": 21},
+          "end": {"line": 34, "column": 22}
+        },
+        "loc": {
+          "start": {"line": 34, "column": 35},
+          "end": {"line": 55, "column": 11}
+        },
+        "line": 34
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {"line": 36, "column": 14},
+          "end": {"line": 36, "column": 15}
+        },
+        "loc": {
+          "start": {"line": 39, "column": 19},
+          "end": {"line": 53, "column": 15}
+        },
+        "line": 39
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 2,
+      "9": 5,
+      "10": 25,
+      "11": 25
+    },
+    "f": {"0": 2, "1": 1, "2": 5, "3": 25},
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "247a8e94ecccfccb71416650f7750bd65a35ac9c"
+  },
+  "/home/fran/dev/buscaminas/components/Board/Styled.ts": {
+    "path": "/home/fran/dev/buscaminas/components/Board/Styled.ts",
+    "statementMap": {
+      "0": {
+        "start": {"line": 7, "column": 18},
+        "end": {"line": 10, "column": 1}
+      },
+      "1": {
+        "start": {"line": 11, "column": 16},
+        "end": {"line": 15, "column": 1}
+      },
+      "2": {
+        "start": {"line": 16, "column": 15},
+        "end": {"line": 19, "column": 1}
+      },
+      "3": {
+        "start": {"line": 20, "column": 20},
+        "end": {"line": 27, "column": 1}
+      },
+      "4": {
+        "start": {"line": 23, "column": 24},
+        "end": {"line": 23, "column": 41}
+      },
+      "5": {
+        "start": {"line": 24, "column": 24},
+        "end": {"line": 24, "column": 40}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 23, "column": 13},
+          "end": {"line": 23, "column": 14}
+        },
+        "loc": {
+          "start": {"line": 23, "column": 24},
+          "end": {"line": 23, "column": 41}
+        },
+        "line": 23
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {"line": 24, "column": 13},
+          "end": {"line": 24, "column": 14}
+        },
+        "loc": {
+          "start": {"line": 24, "column": 24},
+          "end": {"line": 24, "column": 40}
+        },
+        "line": 24
+      }
+    },
+    "branchMap": {},
+    "s": {"0": 1, "1": 1, "2": 1, "3": 1, "4": 2, "5": 2},
+    "f": {"0": 2, "1": 2},
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "325e6b5acba170bba787b3063164ca0b09637074"
+  },
+  "/home/fran/dev/buscaminas/utils/checkNeighbours.ts": {
+    "path": "/home/fran/dev/buscaminas/utils/checkNeighbours.ts",
+    "statementMap": {
+      "0": {
+        "start": {"line": 1, "column": 24},
+        "end": {"line": 10, "column": 1}
+      },
+      "1": {
+        "start": {"line": 2, "column": 22},
+        "end": {"line": 5, "column": 11}
+      },
+      "2": {
+        "start": {"line": 3, "column": 19},
+        "end": {"line": 3, "column": 34}
+      },
+      "3": {
+        "start": {"line": 4, "column": 4},
+        "end": {"line": 4, "column": 39}
+      },
+      "4": {
+        "start": {"line": 6, "column": 2},
+        "end": {"line": 8, "column": 3}
+      },
+      "5": {
+        "start": {"line": 7, "column": 4},
+        "end": {"line": 7, "column": 13}
+      },
+      "6": {
+        "start": {"line": 9, "column": 2},
+        "end": {"line": 9, "column": 21}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 1, "column": 24},
+          "end": {"line": 1, "column": 25}
+        },
+        "loc": {
+          "start": {"line": 1, "column": 70},
+          "end": {"line": 10, "column": 1}
+        },
+        "line": 1
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {"line": 2, "column": 40},
+          "end": {"line": 2, "column": 41}
+        },
+        "loc": {
+          "start": {"line": 2, "column": 50},
+          "end": {"line": 5, "column": 3}
+        },
+        "line": 2
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {"line": 6, "column": 2},
+          "end": {"line": 8, "column": 3}
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {"line": 6, "column": 2},
+            "end": {"line": 8, "column": 3}
+          },
+          {
+            "start": {"line": 6, "column": 2},
+            "end": {"line": 8, "column": 3}
+          }
+        ],
+        "line": 6
+      }
+    },
+    "s": {"0": 2, "1": 26, "2": 147, "3": 147, "4": 26, "5": 5, "6": 21},
+    "f": {"0": 26, "1": 147},
+    "b": {"0": [5, 21]},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "9be6cd3ffe7541f83ae510e37fd0b63344a83cb5"
+  },
+  "/home/fran/dev/buscaminas/utils/createNewBoard.ts": {
+    "path": "/home/fran/dev/buscaminas/utils/createNewBoard.ts",
+    "statementMap": {
+      "0": {
+        "start": {"line": 1, "column": 23},
+        "end": {"line": 12, "column": 1}
+      },
+      "1": {
+        "start": {"line": 2, "column": 2},
+        "end": {"line": 11, "column": 6}
+      },
+      "2": {
+        "start": {"line": 5, "column": 6},
+        "end": {"line": 10, "column": 8}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 1, "column": 23},
+          "end": {"line": 1, "column": 24}
+        },
+        "loc": {
+          "start": {"line": 1, "column": 68},
+          "end": {"line": 12, "column": 1}
+        },
+        "line": 1
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {"line": 4, "column": 9},
+          "end": {"line": 4, "column": 10}
+        },
+        "loc": {
+          "start": {"line": 5, "column": 6},
+          "end": {"line": 10, "column": 8}
+        },
+        "line": 5
+      }
+    },
+    "branchMap": {},
+    "s": {"0": 2, "1": 3, "2": 15},
+    "f": {"0": 3, "1": 15},
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "5b7881266cbb4b6c59d9e4c359b03dd10c94e327"
+  },
+  "/home/fran/dev/buscaminas/utils/getNeighbours.ts": {
+    "path": "/home/fran/dev/buscaminas/utils/getNeighbours.ts",
+    "statementMap": {
+      "0": {
+        "start": {"line": 2, "column": 24},
+        "end": {"line": 20, "column": 1}
+      },
+      "1": {
+        "start": {"line": 3, "column": 21},
+        "end": {"line": 3, "column": 23}
+      },
+      "2": {
+        "start": {"line": 4, "column": 2},
+        "end": {"line": 18, "column": 3}
+      },
+      "3": {
+        "start": {"line": 4, "column": 19},
+        "end": {"line": 4, "column": 21}
+      },
+      "4": {
+        "start": {"line": 5, "column": 4},
+        "end": {"line": 17, "column": 5}
+      },
+      "5": {
+        "start": {"line": 6, "column": 6},
+        "end": {"line": 16, "column": 7}
+      },
+      "6": {
+        "start": {"line": 6, "column": 23},
+        "end": {"line": 6, "column": 25}
+      },
+      "7": {
+        "start": {"line": 7, "column": 8},
+        "end": {"line": 15, "column": 9}
+      },
+      "8": {
+        "start": {"line": 14, "column": 10},
+        "end": {"line": 14, "column": 55}
+      },
+      "9": {
+        "start": {"line": 19, "column": 2},
+        "end": {"line": 19, "column": 20}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 2, "column": 24},
+          "end": {"line": 2, "column": 25}
+        },
+        "loc": {
+          "start": {"line": 2, "column": 63},
+          "end": {"line": 20, "column": 1}
+        },
+        "line": 2
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {"line": 5, "column": 4},
+          "end": {"line": 17, "column": 5}
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {"line": 5, "column": 4},
+            "end": {"line": 17, "column": 5}
+          },
+          {
+            "start": {"line": 5, "column": 4},
+            "end": {"line": 17, "column": 5}
+          }
+        ],
+        "line": 5
+      },
+      "1": {
+        "loc": {
+          "start": {"line": 7, "column": 8},
+          "end": {"line": 15, "column": 9}
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {"line": 7, "column": 8},
+            "end": {"line": 15, "column": 9}
+          },
+          {
+            "start": {"line": 7, "column": 8},
+            "end": {"line": 15, "column": 9}
+          }
+        ],
+        "line": 7
+      },
+      "2": {
+        "loc": {
+          "start": {"line": 8, "column": 10},
+          "end": {"line": 12, "column": 17}
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {"line": 8, "column": 10},
+            "end": {"line": 8, "column": 51}
+          },
+          {
+            "start": {"line": 9, "column": 10},
+            "end": {"line": 12, "column": 17}
+          }
+        ],
+        "line": 8
+      }
+    },
+    "s": {
+      "0": 2,
+      "1": 26,
+      "2": 26,
+      "3": 26,
+      "4": 78,
+      "5": 68,
+      "6": 68,
+      "7": 204,
+      "8": 152,
+      "9": 26
+    },
+    "f": {"0": 26},
+    "b": {"0": [68, 10], "1": [152, 52], "2": [204, 178]},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "1726372a13aa138a269030813aa867262b98d633"
+  },
+  "/home/fran/dev/buscaminas/utils/placeBombs.ts": {
+    "path": "/home/fran/dev/buscaminas/utils/placeBombs.ts",
+    "statementMap": {
+      "0": {
+        "start": {"line": 1, "column": 19},
+        "end": {"line": 20, "column": 1}
+      },
+      "1": {
+        "start": {"line": 7, "column": 20},
+        "end": {"line": 8, "column": 49}
+      },
+      "2": {
+        "start": {"line": 8, "column": 4},
+        "end": {"line": 8, "column": 49}
+      },
+      "3": {
+        "start": {"line": 9, "column": 26},
+        "end": {"line": 12, "column": 4}
+      },
+      "4": {
+        "start": {"line": 9, "column": 33},
+        "end": {"line": 12, "column": 3}
+      },
+      "5": {
+        "start": {"line": 13, "column": 2},
+        "end": {"line": 18, "column": 3}
+      },
+      "6": {
+        "start": {"line": 13, "column": 19},
+        "end": {"line": 13, "column": 20}
+      },
+      "7": {
+        "start": {"line": 15, "column": 24},
+        "end": {"line": 15, "column": 41}
+      },
+      "8": {
+        "start": {"line": 17, "column": 4},
+        "end": {"line": 17, "column": 54}
+      },
+      "9": {
+        "start": {"line": 19, "column": 2},
+        "end": {"line": 19, "column": 15}
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {"line": 1, "column": 19},
+          "end": {"line": 1, "column": 20}
+        },
+        "loc": {
+          "start": {"line": 6, "column": 5},
+          "end": {"line": 20, "column": 1}
+        },
+        "line": 6
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {"line": 7, "column": 20},
+          "end": {"line": 7, "column": 21}
+        },
+        "loc": {
+          "start": {"line": 8, "column": 4},
+          "end": {"line": 8, "column": 49}
+        },
+        "line": 8
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {"line": 9, "column": 26},
+          "end": {"line": 9, "column": 27}
+        },
+        "loc": {
+          "start": {"line": 9, "column": 33},
+          "end": {"line": 12, "column": 3}
+        },
+        "line": 9
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 2,
+      "1": 2,
+      "2": 14,
+      "3": 2,
+      "4": 7,
+      "5": 2,
+      "6": 2,
+      "7": 7,
+      "8": 7,
+      "9": 2
+    },
+    "f": {"0": 2, "1": 14, "2": 7},
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "774490c1efcab6cb848ae1119eb634e7db6a7af8"
+  }
+}
