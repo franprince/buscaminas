@@ -1,5 +1,12 @@
 //No funciona bien cuando el tablero no es cuadrado
-const checkNeighbours = (board: [][], x: number, y: number): string[] => {
+
+import {squareObject} from './createNewBoard'
+
+const getNeighbours = (
+  board: squareObject[][],
+  x: number,
+  y: number,
+): {y: number; x: number}[] => {
   const neighbours = [] // Declara el array vacío donde se van a pushear las coordenadas de los vecinos
   for (let yAxis = -1; yAxis <= 1; yAxis++) {
     if (board[y + yAxis] !== undefined) {
@@ -11,11 +18,12 @@ const checkNeighbours = (board: [][], x: number, y: number): string[] => {
             `${y},
             ${x}`
         ) {
-          neighbours.push(`${yAxis + y},${xAxis + x}`)
+          neighbours.push({y: yAxis + y, x: xAxis + x})
         }
       }
     }
   }
+
   return neighbours
 }
-export default checkNeighbours
+export default getNeighbours

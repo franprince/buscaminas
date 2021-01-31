@@ -26,9 +26,44 @@ const Board: React.FunctionComponent<Props> = ({
       boardHeight,
       boardWidth,
     )
+
+    boardWithMines.map((column, y) => {
+      column.map((item, x) => {
+        const neighbours = getNeighbours(boardWithMines, y, x)
+        const value = checkNeighbours(boardWithMines, neighbours)
+        boardWithMines[x][y].neighbours = neighbours
+        boardWithMines[x][y].value = value
+      })
+    })
     setBoard(boardWithMines)
   }, [boardWidth, boardHeight])
-
+  const handleClick = (
+    isBomb: boolean,
+    clicked: boolean,
+    y: number,
+    x: number,
+    value: number,
+    neighbours: {y: number; x: number}[],
+  ) => {
+    const updatedBoard = board
+    if (clicked) {
+      return
+    } else if (isBomb) {
+      alert('Perdistesssss')
+      updatedBoard[y][x].clicked = true
+      setBoard([...updatedBoard])
+    } else if (value === 0) {
+      updatedBoard[y][x].clicked = true
+      neighbours.map(coordinates => {
+        const {y, x} = coordinates
+        updatedBoard[y][x].clicked = true
+      })
+      setBoard([...updatedBoard])
+    } else {
+      board[y][x].clicked = true
+      setBoard([...updatedBoard])
+    }
+  }
   return (
     <Container>
       <Titulo>Buscaminas</Titulo>
@@ -37,20 +72,25 @@ const Board: React.FunctionComponent<Props> = ({
           {board.map((table, y) => {
             return table.map(
               (
-                square: {isBomb: boolean; clicked: boolean; id: string},
+                square: {
+                  isBomb: boolean
+                  clicked: boolean
+                  id: string
+                  value: number
+                  neighbours: {y: number; x: number}[]
+                },
                 x: number,
               ) => {
-                const neighbours = getNeighbours(board, x, y)
-
                 return (
                   <Square
+                    clicked={square.clicked}
                     x={x}
                     y={y}
-                    id={`${x},${y}`}
                     isBomb={square.isBomb}
-                    neighbours={neighbours}
-                    value={checkNeighbours(board, neighbours)}
-                    key={`${x},${y}`}
+                    neighbours={square.neighbours}
+                    handleClick={handleClick}
+                    value={square.value}
+                    key={`${y},${x}`}
                   />
                 )
               },

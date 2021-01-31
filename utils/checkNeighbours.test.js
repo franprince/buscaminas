@@ -65,7 +65,11 @@ it('Verifica que se asignen correctamente las posiciones', () => {
           },
         ],
       ],
-      ['0,1', '1,0', '1,1'],
+      [
+        {y: 0, x: 1},
+        {y: 1, x: 0},
+        {y: 1, x: 1},
+      ],
     ),
   ).toBe(3)
 })

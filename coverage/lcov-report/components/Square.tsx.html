@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/12</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>8/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/12</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,7 +108,18 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,18 +142,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-yes">25x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,22 +177,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect, useState } from "react";
-import styled from "@emotion/styled";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
+import styled from '@emotion/styled'
+import Explotion from '../hooks/useLottie'
 &nbsp;
 type SquareProps = {
-  x: number;
-  y: number;
-  isBomb: boolean;
-  value: number;
-  neighbours: string[];
-  id: string;
-};
+  isBomb: boolean
+  value: number
+  clicked: boolean
+  x: number
+  y: number
+  handleClick: (isBomb: boolean, clicked: boolean, y: number, x: number) =&gt; void
+}
 &nbsp;
 type StyledProps = {
-  clicked: boolean;
-  isBomb: boolean;
-};
+  clicked: boolean
+  value: number
+}
 &nbsp;
 const SquareContainer = styled.div&lt;StyledProps&gt;`
   display: flex;
@@ -182,34 +203,43 @@ const SquareContainer = styled.div&lt;StyledProps&gt;`
   align-items: center;
   border-top: 1px solid #dfdfdf;
   border-left: 1px solid #dfdfdf;
-  color: ${(props) =&gt; (props.isBomb ? "red" : "")};
-`;
+  font-weight: bold;
+  /* background-color: ${props =&gt; (props.clicked ? <span class="branch-0 cbranch-no" title="branch not covered" >'transparent' </span>: 'black')}; */
+  color: ${props =&gt;
+    props.value === 1
+      ? 'blue'
+      : props.value === 2
+      ? 'green'
+      : props.value === 3
+      ? <span class="branch-0 cbranch-no" title="branch not covered" >'red'</span>
+      : props.value === 4
+      ? <span class="branch-0 cbranch-no" title="branch not covered" >'darkblue'</span>
+      : 'darkred'};
+`
 &nbsp;
-const Square = ({ isBomb, value }: SquareProps) =&gt; {
-  const [clicked, setClicked] = useState(false);
-  const handleClick = <span class="fstat-no" title="function not covered" >(i</span>sBomb: boolean) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (clicked) {</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
-    } else {
-<span class="cstat-no" title="statement not covered" >      setClicked(true);</span>
-<span class="cstat-no" title="statement not covered" >      if (isBomb) {</span>
-<span class="cstat-no" title="statement not covered" >        alert("KABOOOOM!");</span>
-      }
-    }
-  };
+const Square: React.FunctionComponent&lt;SquareProps&gt; = ({
+  isBomb,
+  clicked,
+  handleClick,
+  y,
+  x,
+  value,
+}: SquareProps) =&gt; {
   return (
     &lt;SquareContainer
-      isBomb={isBomb}
+      value={value}
       clicked={clicked}
-      onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleClick(isBomb)}</span>
-      data-testid="cuadrito"
+      onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleClick(isBomb, clicked, y, x)}</span>
     &gt;
-      {isBomb ? "💣" : value === 0 ? "" : value}
+      &lt;p data-testid="cuadrito"&gt;
+        {clicked ? (<span class="branch-0 cbranch-no" title="branch not covered" >isBomb ? '💣' : value === 0 ? '' : value)</span> : ''}
+      &lt;/p&gt;
+      {/* {clicked ? isBomb ? &lt;Explotion/&gt;: '' : ''} */}
     &lt;/SquareContainer&gt;
-  );
-};
+  )
+}
 &nbsp;
-export default Square;
+export default Square
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -217,7 +247,7 @@ export default Square;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Jan 30 2021 14:11:43 GMT-0300 (Argentina Standard Time)
+                at Sun Jan 31 2021 19:36:42 GMT-0300 (Argentina Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

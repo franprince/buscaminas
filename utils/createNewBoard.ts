@@ -1,18 +1,28 @@
+export interface squareObject {
+  isBomb: boolean
+  clicked: boolean
+  value: number
+  id: {y: number; x: number}
+  flagged: boolean
+  neighbours: {y: number; x: number}[]
+}
 const createNewBoard = (
   boardHeight: number,
   boardWidth: number,
-): {
-  isBomb: boolean
-  clicked: boolean
-  id: string
-  flagged: boolean
-}[][] => {
+): squareObject[][] => {
   const board = Array.from({length: boardHeight}, () => {
     return new Array(boardWidth).fill(0).map(() => ({
       isBomb: false,
       clicked: false,
-      id: '',
+      value: 0,
+      id: {y: 0, x: 0},
       flagged: false,
+      neighbours: [
+        {
+          y: 0,
+          x: 0,
+        },
+      ],
     }))
   })
 

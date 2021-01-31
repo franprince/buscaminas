@@ -1,18 +1,27 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
+import Explotion from '../hooks/useLottie'
 
 type SquareProps = {
-  x: number
-  y: number
   isBomb: boolean
   value: number
-  neighbours: string[]
-  id: string
+  clicked: boolean
+  x: number
+  y: number
+  neighbours: {y: number; x: number}[]
+  handleClick: (
+    isBomb: boolean,
+    clicked: boolean,
+    y: number,
+    x: number,
+    value: number,
+    neighbours: {y: number; x: number}[],
+  ) => void
 }
 
 type StyledProps = {
   clicked: boolean
-  isBomb: boolean
+  value: number
 }
 
 const SquareContainer = styled.div<StyledProps>`
@@ -21,33 +30,38 @@ const SquareContainer = styled.div<StyledProps>`
   align-items: center;
   border-top: 1px solid #dfdfdf;
   border-left: 1px solid #dfdfdf;
-  color: ${props => (props.isBomb ? 'red' : '')};
+  font-weight: bold;
+  background-color: ${props => (props.clicked ? 'transparent' : 'black')};
+  color: ${props =>
+    props.value === 1
+      ? 'blue'
+      : props.value === 2
+      ? 'green'
+      : props.value === 3
+      ? 'red'
+      : props.value === 4
+      ? 'darkblue'
+      : 'darkred'};
 `
 
 const Square: React.FunctionComponent<SquareProps> = ({
   isBomb,
+  clicked,
+  handleClick,
+  y,
+  x,
   value,
+  neighbours,
 }: SquareProps) => {
-  const [clicked, setClicked] = useState(false)
-
-  const handleClick = (isBomb: boolean) => {
-    if (clicked) {
-      return
-    } else {
-      setClicked(true)
-      if (isBomb) {
-        alert('KABOOOOM!')
-      }
-    }
-  }
   return (
     <SquareContainer
-      isBomb={isBomb}
+      value={value}
       clicked={clicked}
-      onClick={() => handleClick(isBomb)}
-      data-testid="cuadrito"
+      onClick={() => handleClick(isBomb, clicked, y, x, value, neighbours)}
     >
-      {isBomb ? '💣' : value === 0 ? '' : value}
+      <p data-testid="cuadrito">
+        {clicked ? isBomb ? <Explotion /> : value === 0 ? '' : value : ''}
+      </p>
     </SquareContainer>
   )
 }

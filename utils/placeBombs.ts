@@ -1,11 +1,11 @@
-// Refactorizar para que vuelva a buscar coordenadas si "isBomb" ya es true
+import {squareObject} from './createNewBoard'
 
 const placeBombs = (
-  board: {isBomb: boolean}[][],
+  board: squareObject[][],
   bombs: number,
   boardWidth: number,
   boardHeight: number,
-): {isBomb: boolean}[][] => {
+): squareObject[][] => {
   const getNumber = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min)) + min
   const getRandomCoords = () => ({
@@ -15,8 +15,16 @@ const placeBombs = (
 
   for (let index = 0; index < bombs; index++) {
     // Itera hasta llegar al número de bombas predeterminado
-    const coordinates = getRandomCoords() // Genera coordenadas aleatorias (x , y)
 
+    const getcoordinates = () => {
+      let pos = getRandomCoords() // Genera coordenadas aleatorias (x , y)
+      while (board[pos.y][pos.x].isBomb === true) {
+        // Evita que se repitan las coordenadas
+        pos = getRandomCoords()
+      }
+      return pos
+    }
+    const coordinates = getcoordinates()
     board[coordinates.y][coordinates.x].isBomb = true // Busca en el tablero según las coordenadas del objeto coordinates y le asigna true a isBomb
   }
 
