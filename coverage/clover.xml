@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1612154354745" clover="3.2.0">
-  <project timestamp="1612154354745" name="All files">
-    <metrics statements="20" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6" elements="27" coveredelements="24" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
-    <file name="Board.tsx" path="/home/fran/dev/buscaminas/components/Board/Board.tsx">
-      <metrics statements="20" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="5" type="stmt"/>
-      <line num="33" count="25" type="stmt"/>
-      <line num="34" count="25" type="stmt"/>
-      <line num="35" count="25" type="stmt"/>
-      <line num="36" count="25" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="42" count="2" type="stmt"/>
-      <line num="43" count="0" type="stmt"/>
-      <line num="44" count="0" type="stmt"/>
-      <line num="46" count="2" type="stmt"/>
-      <line num="52" count="5" type="stmt"/>
-      <line num="63" count="25" type="stmt"/>
-    </file>
+<coverage generated="1612184130434" clover="3.2.0">
+  <project timestamp="1612184130434" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
   </project>
 </coverage>
