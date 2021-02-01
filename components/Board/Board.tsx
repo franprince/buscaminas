@@ -6,7 +6,6 @@ import placeBombs from '../../utils/placeBombs'
 import Square from '../Square'
 import {BoardLayout, Container, Titulo, Wrapper} from './Styled'
 import revealTiles from '../../utils/revealTiles'
-import revealAllTiles from '../../utils/revealAllTiles'
 
 type Props = {
   boardWidth: number

@@ -1,100 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1612153050604" clover="3.2.0">
-  <project timestamp="1612153050604" name="All files">
-    <metrics statements="67" coveredstatements="49" conditionals="28" coveredconditionals="15" methods="21" coveredmethods="17" elements="116" coveredelements="81" complexity="0" loc="67" ncloc="67" packages="3" files="6" classes="6"/>
-    <package name="components">
-      <metrics statements="6" coveredstatements="5" conditionals="16" coveredconditionals="9" methods="4" coveredmethods="3"/>
-      <file name="Square.tsx" path="/home/fran/dev/buscaminas/components/Square.tsx">
-        <metrics statements="6" coveredstatements="5" conditionals="16" coveredconditionals="9" methods="4" coveredmethods="3"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="26" count="25" type="cond" truecount="1" falsecount="1"/>
-        <line num="28" count="25" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="47" count="25" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="components.Board">
+<coverage generated="1612154354745" clover="3.2.0">
+  <project timestamp="1612154354745" name="All files">
+    <metrics statements="20" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6" elements="27" coveredelements="24" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+    <file name="Board.tsx" path="/home/fran/dev/buscaminas/components/Board/Board.tsx">
       <metrics statements="20" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
-      <file name="Board.tsx" path="/home/fran/dev/buscaminas/components/Board/Board.tsx">
-        <metrics statements="20" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="5" type="stmt"/>
-        <line num="34" count="25" type="stmt"/>
-        <line num="35" count="25" type="stmt"/>
-        <line num="36" count="25" type="stmt"/>
-        <line num="37" count="25" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="53" count="5" type="stmt"/>
-        <line num="64" count="25" type="stmt"/>
-      </file>
-    </package>
-    <package name="utils">
-      <metrics statements="41" coveredstatements="26" conditionals="12" coveredconditionals="6" methods="10" coveredmethods="8"/>
-      <file name="createNewBoard.ts" path="/home/fran/dev/buscaminas/utils/createNewBoard.ts">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="15" count="73" type="stmt"/>
-        <line num="30" count="5" type="stmt"/>
-      </file>
-      <file name="getNeighbours.ts" path="/home/fran/dev/buscaminas/utils/getNeighbours.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="10" count="26" type="stmt"/>
-        <line num="11" count="26" type="stmt"/>
-        <line num="12" count="78" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="68" type="stmt"/>
-        <line num="14" count="204" type="cond" truecount="2" falsecount="0"/>
-        <line num="21" count="152" type="stmt"/>
-        <line num="27" count="26" type="stmt"/>
-      </file>
-      <file name="placeBombs.ts" path="/home/fran/dev/buscaminas/utils/placeBombs.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="28" type="stmt"/>
-        <line num="11" count="14" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="19" count="12" type="stmt"/>
-        <line num="20" count="12" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="25" count="12" type="stmt"/>
-        <line num="27" count="12" type="stmt"/>
-        <line num="28" count="12" type="stmt"/>
-        <line num="31" count="3" type="stmt"/>
-      </file>
-      <file name="revealTiles.ts" path="/home/fran/dev/buscaminas/utils/revealTiles.ts">
-        <metrics statements="16" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-      </file>
-    </package>
+      <line num="15" count="1" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="32" count="5" type="stmt"/>
+      <line num="33" count="25" type="stmt"/>
+      <line num="34" count="25" type="stmt"/>
+      <line num="35" count="25" type="stmt"/>
+      <line num="36" count="25" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="42" count="2" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
+      <line num="46" count="2" type="stmt"/>
+      <line num="52" count="5" type="stmt"/>
+      <line num="63" count="25" type="stmt"/>
+    </file>
   </project>
 </coverage>

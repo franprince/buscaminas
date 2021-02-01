@@ -33,4 +33,9 @@ module.exports = {
 
   plugins: ['react', '@typescript-eslint', 'jest', 'cypress'],
   rules: {strict: ['error', 'never']},
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }
