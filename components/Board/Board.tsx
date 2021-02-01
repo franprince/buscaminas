@@ -5,6 +5,8 @@ import createNewBoard from '../../utils/createNewBoard'
 import placeBombs from '../../utils/placeBombs'
 import Square from '../Square'
 import {BoardLayout, Container, Titulo, Wrapper} from './Styled'
+import revealTiles from '../../utils/revealTiles'
+import revealAllTiles from '../../utils/revealAllTiles'
 
 type Props = {
   boardWidth: number
@@ -35,34 +37,12 @@ const Board: React.FunctionComponent<Props> = ({
         boardWithMines[x][y].value = value
       })
     })
-    setBoard(boardWithMines)
+
+    setBoard([...boardWithMines])
   }, [boardWidth, boardHeight])
-  const handleClick = (
-    isBomb: boolean,
-    clicked: boolean,
-    y: number,
-    x: number,
-    value: number,
-    neighbours: {y: number; x: number}[],
-  ) => {
-    const updatedBoard = board
-    if (clicked) {
-      return
-    } else if (isBomb) {
-      alert('Perdistesssss')
-      updatedBoard[y][x].clicked = true
-      setBoard([...updatedBoard])
-    } else if (value === 0) {
-      updatedBoard[y][x].clicked = true
-      neighbours.map(coordinates => {
-        const {y, x} = coordinates
-        updatedBoard[y][x].clicked = true
-      })
-      setBoard([...updatedBoard])
-    } else {
-      board[y][x].clicked = true
-      setBoard([...updatedBoard])
-    }
+  const handleClick = (y: number, x: number) => {
+    const updatedBoard = revealTiles(board, y, x)
+    setBoard([...updatedBoard])
   }
   return (
     <Container>
@@ -87,7 +67,6 @@ const Board: React.FunctionComponent<Props> = ({
                     x={x}
                     y={y}
                     isBomb={square.isBomb}
-                    neighbours={square.neighbours}
                     handleClick={handleClick}
                     value={square.value}
                     key={`${y},${x}`}

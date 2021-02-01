@@ -8,15 +8,7 @@ type SquareProps = {
   clicked: boolean
   x: number
   y: number
-  neighbours: {y: number; x: number}[]
-  handleClick: (
-    isBomb: boolean,
-    clicked: boolean,
-    y: number,
-    x: number,
-    value: number,
-    neighbours: {y: number; x: number}[],
-  ) => void
+  handleClick: (y: number, x: number) => void
 }
 
 type StyledProps = {
@@ -51,17 +43,16 @@ const Square: React.FunctionComponent<SquareProps> = ({
   y,
   x,
   value,
-  neighbours,
 }: SquareProps) => {
   return (
     <SquareContainer
       value={value}
       clicked={clicked}
-      onClick={() => handleClick(isBomb, clicked, y, x, value, neighbours)}
+      onClick={() => handleClick(y, x)}
     >
-      <p data-testid="cuadrito">
+      <div data-testid="cuadrito">
         {clicked ? isBomb ? <Explotion /> : value === 0 ? '' : value : ''}
-      </p>
+      </div>
     </SquareContainer>
   )
 }

@@ -1,3 +1,5 @@
+//setupTests.js
+import 'jest-canvas-mock'
 import React from 'react'
 import {render} from '@testing-library/react'
 import Board from '../components/Board/Board'

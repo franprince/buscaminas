@@ -1,4 +1,4 @@
-export interface squareObject {
+export interface tileObject {
   isBomb: boolean
   clicked: boolean
   value: number
@@ -6,10 +6,11 @@ export interface squareObject {
   flagged: boolean
   neighbours: {y: number; x: number}[]
 }
+
 const createNewBoard = (
   boardHeight: number,
   boardWidth: number,
-): squareObject[][] => {
+): tileObject[][] => {
   const board = Array.from({length: boardHeight}, () => {
     return new Array(boardWidth).fill(0).map(() => ({
       isBomb: false,

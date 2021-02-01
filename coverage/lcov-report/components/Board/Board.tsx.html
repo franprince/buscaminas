@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/26</span>
+                <span class='fraction'>18/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/26</span>
+                <span class='fraction'>18/20</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -141,17 +141,8 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,24 +180,12 @@
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,6 +194,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -252,7 +232,8 @@ import createNewBoard from '../../utils/createNewBoard'
 import placeBombs from '../../utils/placeBombs'
 import Square from '../Square'
 import {BoardLayout, Container, Titulo, Wrapper} from './Styled'
-import Explotion from '../../hooks/useLottie'
+import revealTiles from '../../utils/revealTiles'
+import revealAllTiles from '../../utils/revealAllTiles'
 &nbsp;
 type Props = {
   boardWidth: number
@@ -283,24 +264,12 @@ const Board: React.FunctionComponent&lt;Props&gt; = ({
         boardWithMines[x][y].value = value
       })
     })
-    setBoard(boardWithMines)
+&nbsp;
+    setBoard([...boardWithMines])
   }, [boardWidth, boardHeight])
-  const handleClick = <span class="fstat-no" title="function not covered" >(</span>
-    isBomb: boolean,
-    clicked: boolean,
-    y: number,
-    x: number,
-  ) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (clicked) {</span>
-<span class="cstat-no" title="statement not covered" >      return</span>
-    } else <span class="cstat-no" title="statement not covered" >if (isBomb) {</span>
-<span class="cstat-no" title="statement not covered" >      alert('Perdistesssss')</span>
-<span class="cstat-no" title="statement not covered" >      board[y][x].clicked = true</span>
-<span class="cstat-no" title="statement not covered" >      setBoard([...board])</span>
-    } else {
-<span class="cstat-no" title="statement not covered" >      board[y][x].clicked = true</span>
-<span class="cstat-no" title="statement not covered" >      setBoard([...board])</span>
-    }
+  const handleClick = <span class="fstat-no" title="function not covered" >(y</span>: number, x: number) =&gt; {
+    const updatedBoard = <span class="cstat-no" title="statement not covered" >revealTiles(board, y, x)</span>
+<span class="cstat-no" title="statement not covered" >    setBoard([...updatedBoard])</span>
   }
   return (
     &lt;Container&gt;
@@ -315,6 +284,7 @@ const Board: React.FunctionComponent&lt;Props&gt; = ({
                   clicked: boolean
                   id: string
                   value: number
+                  neighbours: {y: number; x: number}[]
                 },
                 x: number,
               ) =&gt; {
@@ -346,7 +316,7 @@ export default Board
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Jan 31 2021 19:36:42 GMT-0300 (Argentina Standard Time)
+                at Mon Feb 01 2021 01:17:30 GMT-0300 (Argentina Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

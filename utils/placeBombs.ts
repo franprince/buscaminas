@@ -1,11 +1,11 @@
-import {squareObject} from './createNewBoard'
+import {tileObject} from './createNewBoard'
 
 const placeBombs = (
-  board: squareObject[][],
+  board: tileObject[][],
   bombs: number,
   boardWidth: number,
   boardHeight: number,
-): squareObject[][] => {
+): tileObject[][] => {
   const getNumber = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min)) + min
   const getRandomCoords = () => ({

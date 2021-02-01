@@ -1,9 +1,9 @@
 //No funciona bien cuando el tablero no es cuadrado
 
-import {squareObject} from './createNewBoard'
+import {tileObject} from './createNewBoard'
 
 const getNeighbours = (
-  board: squareObject[][],
+  board: tileObject[][],
   x: number,
   y: number,
 ): {y: number; x: number}[] => {
