@@ -13,7 +13,11 @@ const Wrapper = styled.div`
   align-content: center;
   justify-content: center;
 `
-const Titulo = styled.h1`
+const Title = styled.h1`
+  color: green;
+  text-align: center;
+`
+const GameStatus = styled.h2`
   color: red;
   text-align: center;
 `
@@ -26,4 +30,4 @@ const BoardLayout = styled.div<Props>`
   border-bottom: 1px solid #dfdfdf;
 `
 
-export {Container, BoardLayout, Titulo, Wrapper}
+export {Container, BoardLayout, Title, GameStatus, Wrapper}

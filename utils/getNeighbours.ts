@@ -4,8 +4,8 @@ import {tileObject} from './createNewBoard'
 
 const getNeighbours = (
   board: tileObject[][],
-  x: number,
   y: number,
+  x: number,
 ): {y: number; x: number}[] => {
   const neighbours = [] // Declara el array vacío donde se van a pushear las coordenadas de los vecinos
   for (let yAxis = -1; yAxis <= 1; yAxis++) {

@@ -23,7 +23,7 @@ const SquareContainer = styled.div<StyledProps>`
   border-top: 1px solid #dfdfdf;
   border-left: 1px solid #dfdfdf;
   font-weight: bold;
-  background-color: ${props => (props.clicked ? 'transparent' : 'black')};
+  background-color: ${props => (props.clicked ? 'transparent' : 'grey')};
   color: ${props =>
     props.value === 1
       ? 'blue'
