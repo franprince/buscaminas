@@ -24,8 +24,8 @@ const GameStatus = styled.h2`
 const BoardLayout = styled.div<Props>`
   display: grid;
   grid-template:
-    repeat(${props => props.boardHeight}, 3rem) /
-    repeat(${props => props.boardWidth}, 3rem);
+    repeat(${props => props.boardHeight}, 2rem) /
+    repeat(${props => props.boardWidth}, 2rem);
   border-right: 1px solid #dfdfdf;
   border-bottom: 1px solid #dfdfdf;
 `

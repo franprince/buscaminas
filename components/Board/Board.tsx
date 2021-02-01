@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {SyntheticEvent, useEffect, useState} from 'react'
 import getNeighbours from '../../utils/getNeighbours'
 import checkNeighbours from '../../utils/checkNeighbours'
 import createNewBoard from '../../utils/createNewBoard'
@@ -16,7 +16,7 @@ const Board: React.FunctionComponent<Props> = ({
   boardHeight,
   boardWidth,
 }: Props) => {
-  const [board, setBoard] = useState([]) // Declara el estado del tablero con un array vacío
+  const [board, setBoard] = useState([[]]) // Declara el estado del tablero con un array vacío
   const [gameStatus, setGameStatus] = useState({
     blockedBoard: false,
     defeat: false,
@@ -65,6 +65,18 @@ const Board: React.FunctionComponent<Props> = ({
     )
     setBoard([...updatedBoard])
   }
+  const handleRightClick = (e: SyntheticEvent, y: number, x: number): void => {
+    e.preventDefault()
+    const updatedBoard = board
+    const currentTile = updatedBoard[y][x]
+    if (!currentTile.clicked) {
+      currentTile.flagged = !currentTile.flagged
+      setBoard([...updatedBoard])
+    } else {
+      return
+    }
+    console.log('🚩' + y, x)
+  }
 
   return (
     <Container>
@@ -80,6 +92,7 @@ const Board: React.FunctionComponent<Props> = ({
                   clicked: boolean
                   id: string
                   value: number
+                  flagged: boolean
                   neighbours: {y: number; x: number}[]
                 },
                 x: number,
@@ -91,8 +104,10 @@ const Board: React.FunctionComponent<Props> = ({
                     y={y}
                     isBomb={square.isBomb}
                     handleClick={handleClick}
+                    handleRightClick={handleRightClick}
                     value={square.value}
                     key={`${y},${x}`}
+                    flagged={square.flagged}
                   />
                 )
               },

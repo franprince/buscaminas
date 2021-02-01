@@ -1,4 +1,4 @@
-import checkNeighbours from './checkNeighbours'
+import checkNeighbours from '../checkNeighbours'
 
 it('Verifica que se asignen correctamente las posiciones', () => {
   expect(

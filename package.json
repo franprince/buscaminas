@@ -17,7 +17,7 @@
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
     "check-types": "tsc",
-    "validate": "yarn check-format && yarn lint && yarn tsc && yarn build"
+    "validate": "npm-run-all --parallel test check-types check-format lint build"
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",
@@ -32,6 +32,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
+    "@emotion/jest": "^11.1.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@types/jest": "^26.0.20",

@@ -1,5 +1,5 @@
-import createNewBoard from './createNewBoard'
-import revealAllTiles from './revealAllTiles'
+import createNewBoard from '../createNewBoard'
+import revealAllTiles from '../revealAllTiles'
 
 it('Verifica que se inserten las minas en el tablero', () => {
   const boardHeight = 5

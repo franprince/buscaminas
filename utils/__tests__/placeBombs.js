@@ -1,5 +1,5 @@
-import createNewBoard from './createNewBoard'
-import placeBombs from './placeBombs'
+import createNewBoard from '../createNewBoard'
+import placeBombs from '../placeBombs'
 
 it('Verifica que se inserten las minas en el tablero', () => {
   const boardHeight = 3
