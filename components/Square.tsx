@@ -16,25 +16,32 @@ type SquareProps = {
 type StyledProps = {
   clicked: boolean
   value: number
+  isBomb: boolean
 }
 
 const SquareContainer = styled.div<StyledProps>`
+  font-family: 'Mukta', sans-serif;
+  border-radius: 10px;
   display: flex;
+  font-size: 12px;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #dfdfdf;
-  border-left: 1px solid #dfdfdf;
   font-weight: bold;
-  background-color: ${props => (props.clicked ? 'transparent' : 'grey')};
+  background: ${props =>
+    props.clicked
+      ? props.isBomb
+        ? '#F05153'
+        : '#2a5dab'
+      : 'radial-gradient(rgb(156,218,240),rgb(127,234,254)50%)'};
   color: ${props =>
     props.value === 1
-      ? 'blue'
+      ? '#ffffff'
       : props.value === 2
-      ? 'green'
+      ? '#64B8E5'
       : props.value === 3
-      ? 'red'
+      ? '#ADBAA8'
       : props.value === 4
-      ? 'darkblue'
+      ? '#8F9183'
       : 'darkred'};
 `
 
@@ -50,6 +57,7 @@ const Square: React.FunctionComponent<SquareProps> = ({
 }: SquareProps) => {
   return (
     <SquareContainer
+      isBomb={isBomb}
       value={value}
       clicked={clicked}
       onClick={() => handleClick(y, x)}

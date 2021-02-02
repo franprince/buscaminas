@@ -1,5 +1,7 @@
+import {tileObject} from './createNewBoard'
+
 const checkNeighbours = (
-  board: {isBomb: boolean}[][],
+  board: tileObject[][],
   neighbours: {y: number; x: number}[],
 ): number => {
   const bombsAround = neighbours.filter(item => {

@@ -5,11 +5,10 @@ const revealTiles = (
   y: number,
   x: number,
   handleGameStatus: (status: string) => void,
-  isBlocked: boolean,
 ): tileObject[][] => {
   const newBoard = board
   const currentSquare = newBoard[y][x]
-  if (currentSquare.clicked || isBlocked || currentSquare.flagged) {
+  if (currentSquare.clicked || currentSquare.flagged) {
     return
   } else if (currentSquare.isBomb) {
     newBoard[y][x].clicked = true
@@ -26,7 +25,6 @@ const revealTiles = (
         coordinates.y,
         coordinates.x,
         handleGameStatus,
-        isBlocked,
       )
     })
   }
