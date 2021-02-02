@@ -66,6 +66,7 @@ const Board: React.FunctionComponent<Props> = ({
     setBoard([...updatedBoard])
   }
   const handleRightClick = (e: SyntheticEvent, y: number, x: number): void => {
+    //
     e.preventDefault()
     const updatedBoard = board
     const currentTile = updatedBoard[y][x]
@@ -75,12 +76,11 @@ const Board: React.FunctionComponent<Props> = ({
     } else {
       return
     }
-    console.log('🚩' + y, x)
   }
 
   return (
     <Container>
-      <Title>Buscaminas</Title>
+      <Title>Nombre: Elbus Apellido: Caminas</Title>
 
       <Wrapper>
         <BoardLayout boardHeight={boardHeight} boardWidth={boardWidth}>
@@ -116,9 +116,9 @@ const Board: React.FunctionComponent<Props> = ({
         </BoardLayout>
       </Wrapper>
       {gameStatus.defeat && (
-        <GameStatus>No deseaste ganar lo suficiente, perdistesssss.</GameStatus>
+        <GameStatus>Perdistesssss: No deseaste ganar lo suficiente.</GameStatus>
       )}
-      {gameStatus.victory && <GameStatus>Ok, ganaste.</GameStatus>}
+      {gameStatus.victory && <GameStatus>Ganaste.</GameStatus>}
     </Container>
   )
 }

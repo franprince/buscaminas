@@ -24,9 +24,14 @@
       "env": {
         "jest": true
       }
+    },
+    {
+      "files": ["**/cypress/**"],
+      "env": {
+        "cypress/globals": true
+      }
     }
   ],
-
   "plugins": ["react", "@typescript-eslint", "jest", "cypress"],
   "extends": [
     "eslint:recommended",

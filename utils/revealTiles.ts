@@ -9,7 +9,7 @@ const revealTiles = (
 ): tileObject[][] => {
   const newBoard = board
   const currentSquare = newBoard[y][x]
-  if (currentSquare.clicked || isBlocked) {
+  if (currentSquare.clicked || isBlocked || currentSquare.flagged) {
     return
   } else if (currentSquare.isBomb) {
     newBoard[y][x].clicked = true
