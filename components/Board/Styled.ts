@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 640px) {
     display: flex;
     flex-direction: column;
   }
@@ -46,7 +46,7 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 0.8rem;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 640px) {
     flex-direction: row;
     width: 100%;
     padding: 1rem 0;
@@ -77,7 +77,7 @@ const InfoSection = styled.div`
     margin: 0;
     padding: 0;
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 640px) {
     width: 33%;
   }
 `
@@ -97,9 +97,6 @@ const ModalContainer = styled.div`
   padding: 1.5em;
   border-radius: 25px;
   box-shadow: 0 0 30px #0000002a;
-  @media screen and (max-width: 360px) {
-    width: 33%;
-  }
 `
 const Button = styled.button<ButtonProps>`
   padding: 0.3rem;
