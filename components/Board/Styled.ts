@@ -18,6 +18,10 @@ const Wrapper = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
+  @media screen and (max-width: 360px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const Title = styled.h1`
   color: #ffffff;
@@ -42,6 +46,11 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 0.8rem;
+  @media screen and (max-width: 360px) {
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem 0;
+  }
 `
 const InfoSection = styled.div`
   display: grid;
@@ -68,8 +77,11 @@ const InfoSection = styled.div`
     margin: 0;
     padding: 0;
   }
+  @media screen and (max-width: 360px) {
+    width: 33%;
+  }
 `
-const Modal = styled.div`
+const ModalContainer = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -85,6 +97,9 @@ const Modal = styled.div`
   padding: 1.5em;
   border-radius: 25px;
   box-shadow: 0 0 30px #0000002a;
+  @media screen and (max-width: 360px) {
+    width: 33%;
+  }
 `
 const Button = styled.button<ButtonProps>`
   padding: 0.3rem;
@@ -104,6 +119,6 @@ export {
   Wrapper,
   InfoContainer,
   InfoSection,
-  Modal,
+  ModalContainer,
   Button,
 }

@@ -45,7 +45,7 @@ const SquareContainer = styled.div<StyledProps>`
       : 'darkred'};
 `
 
-const Square: React.FunctionComponent<SquareProps> = ({
+const Square: React.FC<SquareProps> = ({
   isBomb,
   clicked,
   handleClick,
