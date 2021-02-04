@@ -36,7 +36,6 @@ const revealTiles = (
       )
     })
   }
-  console.log(counter.totalTiles, counter.clickedTiles, counter.flaggedTiles)
 
   return newBoard
 }
