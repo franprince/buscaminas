@@ -39,7 +39,6 @@ const BoardLayout = styled.div<Props>`
   grid-template:
     repeat(${props => props.boardHeight}, 2rem) /
     repeat(${props => props.boardWidth}, 2rem);
-
   background-color: #1b2755;
 `
 const InfoContainer = styled.div`
