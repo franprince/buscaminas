@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, GameStatus, ModalContainer} from './Board/Styled'
+import {Button, ModalContainer} from './Board/Styled'
 
 type Props = {
   status: string
@@ -12,10 +12,10 @@ const Modal: React.FC<Props> = ({status, initializeGame}: Props) => {
       <ModalContainer>
         {status === 'defeat' && (
           <>
-            <GameStatus>
+            <h2 style={{color: 'red'}}>
               F <br />
               Perdiste.
-            </GameStatus>
+            </h2>
             <div style={{display: 'flex'}}>
               <Button onClick={() => initializeGame()} color={'green'}>
                 Jugar de nuevo
@@ -28,7 +28,7 @@ const Modal: React.FC<Props> = ({status, initializeGame}: Props) => {
         )}
         {status === 'victory' && (
           <>
-            <GameStatus>Ganaste!</GameStatus>
+            <h2 style={{color: 'green'}}>Ganaste!</h2>
             <div style={{display: 'flex'}}>
               <Button onClick={() => initializeGame()} color={'green'}>
                 Jugar de nuevo

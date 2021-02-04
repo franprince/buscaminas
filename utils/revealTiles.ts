@@ -5,6 +5,13 @@ const revealTiles = (
   y: number,
   x: number,
   handleGameStatus: (status: string) => void,
+  counter: {
+    clickedTiles: number
+    mines: number
+    flags: number
+    totalTiles: number
+    flaggedTiles: number
+  },
 ): tileObject[][] => {
   const newBoard = board
   const currentSquare = newBoard[y][x]
@@ -25,9 +32,12 @@ const revealTiles = (
         coordinates.y,
         coordinates.x,
         handleGameStatus,
+        counter,
       )
     })
   }
+  console.log(counter.totalTiles, counter.clickedTiles, counter.flaggedTiles)
+
   return newBoard
 }
 export default revealTiles

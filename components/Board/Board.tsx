@@ -15,11 +15,13 @@ import Timer from '../Timer'
 type Props = {
   boardHeight: number
   boardWidth: number
+  mines: number
 }
 
 const Board: React.FunctionComponent<Props> = ({
   boardHeight,
   boardWidth,
+  mines,
 }: Props) => {
   const {
     board,
@@ -32,13 +34,11 @@ const Board: React.FunctionComponent<Props> = ({
     counter,
   } = useBoard()
   useEffect(() => {
-    setCustomBoardSize({boardHeight, boardWidth})
+    setCustomBoardSize({boardHeight, boardWidth, mines})
   }, [])
 
   return (
     <Container>
-      {/* <Title>Nombre: Elbus Apellido: Caminas</Title> */}
-
       <Wrapper>
         <BoardLayout boardHeight={boardHeight} boardWidth={boardWidth}>
           {board.map((table, y) => {
@@ -76,10 +76,10 @@ const Board: React.FunctionComponent<Props> = ({
             <span>⏱</span> <Timer count={time} />
           </InfoSection>
           <InfoSection>
-            <span>💣</span> <p>{10}</p>
+            <span>💣</span> <p>{counter.mines}</p>
           </InfoSection>
           <InfoSection>
-            <span>🚩</span> <p>{10 - counter.flaggedTiles}</p>
+            <span>🚩</span> <p>{counter.flags - counter.flaggedTiles}</p>
           </InfoSection>
         </InfoContainer>
       </Wrapper>

@@ -6,10 +6,15 @@ import getNeighbours from '../utils/getNeighbours'
 import checkNeighbours from '../utils/checkNeighbours'
 import createNewBoard, {tileObject} from '../utils/createNewBoard'
 import placeBombs from '../utils/placeBombs'
+import checkVictory from '../utils/checkVictory'
 
 type useBoardType = {
   board: tileObject[][]
-  setCustomBoardSize: React.Dispatch<{boardHeight: number; boardWidth: number}>
+  setCustomBoardSize: React.Dispatch<{
+    boardHeight: number
+    boardWidth: number
+    mines: number
+  }>
   gameStatus: {blockedBoard: boolean; defeat: boolean; victory: boolean}
   handleClick: (y: number, x: number) => void
   handleRightClick: (e: SyntheticEvent, y: number, x: number) => void
@@ -18,6 +23,7 @@ type useBoardType = {
   counter: {
     clickedTiles: number
     mines: number
+    flags: number
     totalTiles: number
     flaggedTiles: number
   }
@@ -26,6 +32,7 @@ const useBoard = (): useBoardType => {
   const [customBoardSize, setCustomBoardSize] = useState({
     boardHeight: 0,
     boardWidth: 0,
+    mines: 0,
   })
   const [board, setBoard] = useState([[]]) // Declara el estado del tablero con un array vacío
   const [gameStatus, setGameStatus] = useState({
@@ -42,9 +49,20 @@ const useBoard = (): useBoardType => {
   const [counter, setCounter] = useState({
     clickedTiles: 0,
     mines: 0,
+    flags: 0,
     totalTiles: 0,
     flaggedTiles: 0,
   })
+
+  useEffect(() => {
+    checkVictory(
+      board,
+      counter.totalTiles,
+      counter.clickedTiles,
+      counter.mines,
+      handleGameStatus,
+    )
+  }, [counter.clickedTiles])
   const handleGameStatus = (status: string): void => {
     //  Cambia el estado del juego a victoria o derrota, si no conoce el estado que se le pasa, tira un error
     if (status === 'victory') {
@@ -61,13 +79,9 @@ const useBoard = (): useBoardType => {
   const handleClick = (y: number, x: number): void => {
     //
     if (!gameStatus.blockedBoard) {
-      const updatedBoard = revealTiles(board, y, x, handleGameStatus)
+      const updatedBoard = revealTiles(board, y, x, handleGameStatus, counter)
       const clicked = countClicked(updatedBoard)
-
       setCounter({...counter, clickedTiles: clicked})
-      if (counter.totalTiles - counter.clickedTiles === counter.mines) {
-        handleGameStatus('victory')
-      }
       setBoard([...updatedBoard])
     } else {
       return
@@ -87,11 +101,18 @@ const useBoard = (): useBoardType => {
           currentTile.flagged = false
           setCounter({...counter, flaggedTiles: counter.flaggedTiles - 1})
         } else {
-          if (counter.flaggedTiles === 10) {
+          if (counter.flaggedTiles === counter.flags) {
             return
           }
           currentTile.flagged = true
           setCounter({...counter, flaggedTiles: counter.flaggedTiles + 1})
+          checkVictory(
+            board,
+            counter.totalTiles,
+            counter.clickedTiles,
+            counter.mines,
+            handleGameStatus,
+          )
         }
         setBoard([...updatedBoard])
       }
@@ -101,7 +122,8 @@ const useBoard = (): useBoardType => {
   }
   const initializeGame = () => {
     const boardSize = boardWidth * boardHeight //  Calcula la cantidad total de cuadritos en el tablero
-    const ammountOfMines = Math.round(boardSize / 10) //  Calcula la cantidad de minas que va a tener el tablero según su tamaño y la dificultad del juego
+    const ammountOfMines = Math.round(boardSize / 100) //  Calcula la cantidad de minas que va a tener el tablero según su tamaño y la dificultad del juego
+    const ammountOfFlags = ammountOfMines //  La cantidad de banderitas es siempre igual a la cantidad de bombas
     const newBoard = createNewBoard(boardWidth, boardHeight) //  Genera todas las posiciones del tablero
 
     const boardWithMines = placeBombs(
@@ -129,6 +151,7 @@ const useBoard = (): useBoardType => {
       ...counter,
       clickedTiles: 0,
       mines: ammountOfMines,
+      flags: ammountOfFlags,
       totalTiles: boardSize,
       flaggedTiles: 0,
     })

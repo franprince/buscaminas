@@ -27,10 +27,7 @@ const Title = styled.h1`
   color: #ffffff;
   text-align: center;
 `
-const GameStatus = styled.h2`
-  color: red;
-  text-align: center;
-`
+
 const BoardLayout = styled.div<Props>`
   align-self: center;
   justify-self: center;
@@ -111,7 +108,6 @@ export {
   Container,
   BoardLayout,
   Title,
-  GameStatus,
   Wrapper,
   InfoContainer,
   InfoSection,
