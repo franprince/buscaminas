@@ -40,7 +40,7 @@ const useBoard = (): useBoardType => {
     defeat: false,
     victory: false,
   }) // Declara el estado inicial del juego
-  const {boardHeight, boardWidth} = customBoardSize
+  const {boardHeight, boardWidth, mines} = customBoardSize
   const {time, handleReset, isActive, handleStart, handleStop} = useTimer()
   useEffect(() => {
     initializeGame()
@@ -78,7 +78,7 @@ const useBoard = (): useBoardType => {
 
   const handleClick = (y: number, x: number): void => {
     //
-    if (!gameStatus.blockedBoard) {
+    if (!gameStatus.blockedBoard && !board[y][x].clicked) {
       const updatedBoard = revealTiles(board, y, x, handleGameStatus, counter)
       const clicked = countClicked(updatedBoard)
       setCounter({...counter, clickedTiles: clicked})
@@ -122,7 +122,7 @@ const useBoard = (): useBoardType => {
   }
   const initializeGame = () => {
     const boardSize = boardWidth * boardHeight //  Calcula la cantidad total de cuadritos en el tablero
-    const ammountOfMines = Math.round(boardSize / 100) //  Calcula la cantidad de minas que va a tener el tablero según su tamaño y la dificultad del juego
+    const ammountOfMines = mines //  Calcula la cantidad de minas que va a tener el tablero según su tamaño y la dificultad del juego
     const ammountOfFlags = ammountOfMines //  La cantidad de banderitas es siempre igual a la cantidad de bombas
     const newBoard = createNewBoard(boardWidth, boardHeight) //  Genera todas las posiciones del tablero
 
