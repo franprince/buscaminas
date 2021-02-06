@@ -27,6 +27,8 @@ const SquareContainer = styled.div<StyledProps>`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
   background: ${props =>
     props.clicked
       ? props.isBomb
@@ -43,6 +45,9 @@ const SquareContainer = styled.div<StyledProps>`
       : props.value === 4
       ? '#8F9183'
       : 'darkred'};
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const Square: React.FC<SquareProps> = ({
