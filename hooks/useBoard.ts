@@ -1,4 +1,4 @@
-import React, {useState, useEffect, SyntheticEvent} from 'react'
+import React, {useState, SyntheticEvent} from 'react'
 import revealTiles from '../utils/revealTiles'
 import {countClicked} from '../utils/counters'
 import useTimer from './useTimer'
@@ -18,7 +18,11 @@ type useBoardType = {
   gameStatus: {blockedBoard: boolean; defeat: boolean; victory: boolean}
   handleClick: (y: number, x: number) => void
   handleRightClick: (e: SyntheticEvent, y: number, x: number) => void
-  initializeGame: () => void
+  createEmptyBoard: (
+    boardHeight: number,
+    boardWidth: number,
+    mines: number,
+  ) => void
   time: number
   counter: {
     clickedTiles: number
@@ -40,11 +44,10 @@ const useBoard = (): useBoardType => {
     defeat: false,
     victory: false,
   }) // Declara el estado inicial del juego
+
   const {boardHeight, boardWidth, mines} = customBoardSize
+
   const {time, handleReset, isActive, handleStart, handleStop} = useTimer()
-  useEffect(() => {
-    initializeGame()
-  }, [boardWidth, boardHeight]) //  Todo esto sólo se ejecuta cuando cambia el alto o el ancho del tablero
 
   const [counter, setCounter] = useState({
     clickedTiles: 0,
@@ -54,15 +57,6 @@ const useBoard = (): useBoardType => {
     flaggedTiles: 0,
   })
 
-  useEffect(() => {
-    checkVictory(
-      board,
-      counter.totalTiles,
-      counter.clickedTiles,
-      counter.mines,
-      handleGameStatus,
-    )
-  }, [counter.clickedTiles])
   const handleGameStatus = (status: string): void => {
     //  Cambia el estado del juego a victoria o derrota, si no conoce el estado que se le pasa, tira un error
     if (status === 'victory') {
@@ -77,19 +71,28 @@ const useBoard = (): useBoardType => {
   }
 
   const handleClick = (y: number, x: number): void => {
-    //
+    if (!counter.clickedTiles) {
+      startGame({y: y, x: x})
+    } // Si es el primer click, se inicia el juego y se pasan las coordenadas del casillero para asegurarse que no pierda el juego en el primer click
     if (!gameStatus.blockedBoard && !board[y][x].clicked) {
       const updatedBoard = revealTiles(board, y, x, handleGameStatus, counter)
       const clicked = countClicked(updatedBoard)
+
       setCounter({...counter, clickedTiles: clicked})
       setBoard([...updatedBoard])
+      checkVictory(
+        board,
+        counter.totalTiles,
+        clicked,
+        counter.mines,
+        handleGameStatus,
+      )
     } else {
       return
     }
   }
 
   const handleRightClick = (e: SyntheticEvent, y: number, x: number): void => {
-    //
     e.preventDefault()
     const updatedBoard = board
     const currentTile = updatedBoard[y][x]
@@ -106,31 +109,55 @@ const useBoard = (): useBoardType => {
           }
           currentTile.flagged = true
           setCounter({...counter, flaggedTiles: counter.flaggedTiles + 1})
-          checkVictory(
-            board,
-            counter.totalTiles,
-            counter.clickedTiles,
-            counter.mines,
-            handleGameStatus,
-          )
         }
         setBoard([...updatedBoard])
+        checkVictory(
+          board,
+          counter.totalTiles,
+          counter.clickedTiles,
+          counter.mines,
+          handleGameStatus,
+        )
       }
     } else {
       return
     }
   }
-  const initializeGame = () => {
+
+  const createEmptyBoard = (
+    boardHeight: number,
+    boardWidth: number,
+    mines: number,
+  ): void => {
+    setCustomBoardSize({
+      boardHeight: boardHeight,
+      boardWidth: boardWidth,
+      mines: mines,
+    })
     const boardSize = boardWidth * boardHeight //  Calcula la cantidad total de cuadritos en el tablero
     const ammountOfMines = mines //  Calcula la cantidad de minas que va a tener el tablero según su tamaño y la dificultad del juego
     const ammountOfFlags = ammountOfMines //  La cantidad de banderitas es siempre igual a la cantidad de bombas
     const newBoard = createNewBoard(boardWidth, boardHeight) //  Genera todas las posiciones del tablero
+    handleReset()
+    setCounter({
+      ...counter,
+      clickedTiles: 0,
+      mines: ammountOfMines,
+      flags: ammountOfFlags,
+      totalTiles: boardSize,
+      flaggedTiles: 0,
+    })
+    setGameStatus({blockedBoard: false, defeat: false, victory: false}) //  Mepa que esto no tendría que ir acá. Hacer función para reiniciar
+    setBoard([...newBoard]) //  Guarda toda la información agregada al tablero en el estado
+  }
 
+  const startGame = (firstClickCoordinates: {y: number; x: number}): void => {
     const boardWithMines = placeBombs(
-      newBoard,
-      ammountOfMines,
+      board,
+      mines,
       boardHeight,
       boardWidth,
+      firstClickCoordinates,
     ) //  Agrega minas al tablero
     boardWithMines.map((column, y) => {
       //  Mapea cada uno de los cuadritos
@@ -147,15 +174,6 @@ const useBoard = (): useBoardType => {
       handleReset()
       handleStart()
     }
-    setCounter({
-      ...counter,
-      clickedTiles: 0,
-      mines: ammountOfMines,
-      flags: ammountOfFlags,
-      totalTiles: boardSize,
-      flaggedTiles: 0,
-    })
-    setGameStatus({blockedBoard: false, defeat: false, victory: false}) //  Mepa que esto no tendría que ir acá. Hacer función para reiniciar
     setBoard([...boardWithMines]) //  Guarda toda la información agregada al tablero en el estado
   }
   return {
@@ -166,7 +184,7 @@ const useBoard = (): useBoardType => {
     handleRightClick,
     time,
     counter,
-    initializeGame,
+    createEmptyBoard,
   }
 }
 

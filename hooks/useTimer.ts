@@ -21,6 +21,7 @@ const useTimer = (): useTimerTipe => {
     clearInterval(timerRef.current)
     setIsActive(false)
   }
+
   const handleReset = () => {
     clearInterval(timerRef.current)
     setIsActive(false)

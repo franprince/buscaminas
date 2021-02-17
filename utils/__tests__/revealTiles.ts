@@ -6,11 +6,13 @@ it('Verifica que se inserten las minas en el tablero', () => {
   const boardWidth = 3
   const expectedMines = 4
   const newBoard = createNewBoard(boardHeight, boardWidth)
+  const firstClickCoordinates = {y: 0, x: 1}
   const boardWithMines = placeBombs(
     newBoard,
     expectedMines,
     boardHeight,
     boardWidth,
+    firstClickCoordinates,
   )
   const minesArray = boardWithMines.map(row => {
     return row.filter(item => {

@@ -25,18 +25,20 @@ const Board: React.FunctionComponent<Props> = ({
 }: Props) => {
   const {
     board,
-    setCustomBoardSize,
     gameStatus,
     handleClick,
     handleRightClick,
     time,
-    initializeGame,
     counter,
+    createEmptyBoard,
   } = useBoard()
-  useEffect(() => {
-    setCustomBoardSize({boardHeight, boardWidth, mines})
-  }, [])
 
+  useEffect(() => {
+    createEmptyBoard(boardHeight, boardWidth, mines)
+  }, [])
+  const handleRestartGame = () => {
+    createEmptyBoard(boardHeight, boardWidth, mines)
+  }
   return (
     <Container>
       <Wrapper>
@@ -87,7 +89,7 @@ const Board: React.FunctionComponent<Props> = ({
         status={
           gameStatus.defeat ? 'defeat' : gameStatus.victory ? 'victory' : null
         }
-        initializeGame={initializeGame}
+        handleRestartGame={handleRestartGame}
       />
     </Container>
   )
