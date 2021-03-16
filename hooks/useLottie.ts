@@ -1,10 +1,10 @@
 import React from 'react'
 import {useLottie} from 'lottie-react'
-import explotionAnimation from '../lottieFiles/explosion.json'
+import explosionAnimation from '../lottieFiles/explosion.json'
 
-const Explotion: React.FunctionComponent = () => {
+const Explosion: React.FunctionComponent = () => {
   const options = {
-    animationData: explotionAnimation,
+    animationData: explosionAnimation,
     loop: false,
     autoplay: true,
   }
@@ -14,4 +14,4 @@ const Explotion: React.FunctionComponent = () => {
   return View
 }
 
-export default Explotion
+export default Explosion

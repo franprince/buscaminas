@@ -1,6 +1,6 @@
 import React, {SyntheticEvent} from 'react'
 import styled from '@emotion/styled'
-import Explotion from '../hooks/useLottie'
+import Explosion from '../hooks/useLottie'
 
 type SquareProps = {
   isBomb: boolean
@@ -69,7 +69,7 @@ const Square: React.FC<SquareProps> = ({
       onContextMenu={e => handleRightClick(e, y, x)}
     >
       <div data-testid="cuadrito">
-        {clicked ? isBomb ? <Explotion /> : value === 0 ? '' : value : ''}
+        {clicked ? isBomb ? <Explosion /> : value === 0 ? '' : value : ''}
         {flagged ? '🚩' : ''}
       </div>
     </SquareContainer>

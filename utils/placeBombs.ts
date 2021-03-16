@@ -5,6 +5,7 @@ const placeBombs = (
   bombs: number,
   boardWidth: number,
   boardHeight: number,
+  firstClickCoordinates: {y: number; x: number},
 ): tileObject[][] => {
   const getNumber = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min)) + min
@@ -18,7 +19,10 @@ const placeBombs = (
 
     const getcoordinates = () => {
       let pos = getRandomCoords() // Genera coordenadas aleatorias (x , y)
-      while (board[pos.y][pos.x].isBomb === true) {
+      while (
+        board[pos.y][pos.x].isBomb === true ||
+        (pos.y === firstClickCoordinates.y && pos.x === firstClickCoordinates.x)
+      ) {
         // Evita que se repitan las coordenadas
         pos = getRandomCoords()
       }

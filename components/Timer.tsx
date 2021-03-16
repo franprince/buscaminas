@@ -5,8 +5,8 @@ type Props = {
 const Timer: React.FC<Props> = ({count}: Props): ReactElement => {
   const seconds = count % 60
   const minutes = Math.floor(count / 60)
-  const formatedSeconds = String(seconds).length === 1 ? `0${seconds}` : seconds
-  const formatedMinutes = String(minutes).length === 1 ? `0${minutes}` : minutes
+  const formatedSeconds = String(seconds).padStart(2, '0')
+  const formatedMinutes = String(minutes).padStart(2, '0')
   return <p>{`${formatedMinutes}:${formatedSeconds}`}</p>
 }
 
