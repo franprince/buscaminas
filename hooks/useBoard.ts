@@ -147,7 +147,7 @@ const useBoard = (): useBoardType => {
       totalTiles: boardSize,
       flaggedTiles: 0,
     })
-    setGameStatus({blockedBoard: false, defeat: false, victory: false}) //  Mepa que esto no tendría que ir acá. Hacer función para reiniciar
+    setGameStatus({blockedBoard: false, defeat: false, victory: false})
     setBoard([...newBoard]) //  Guarda toda la información agregada al tablero en el estado
   }
 

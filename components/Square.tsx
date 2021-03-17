@@ -30,11 +30,7 @@ const SquareContainer = styled.div<StyledProps>`
   -webkit-user-select: none;
   -khtml-user-select: none;
   background: ${props =>
-    props.clicked
-      ? props.isBomb
-        ? '#F05153'
-        : '#2a5dab'
-      : 'radial-gradient(rgb(156,218,240),rgb(127,234,254)50%)'};
+    props.clicked ? (props.isBomb ? '#F05153' : '#2a5dab') : '#aaaaaa'};
   color: ${props =>
     props.value === 1
       ? '#ffffff'

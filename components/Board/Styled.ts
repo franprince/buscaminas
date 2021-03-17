@@ -59,7 +59,7 @@ const InfoSection = styled.div`
   background-color: #2a5dab;
   width: 8rem;
   height: 3rem;
-  border-radius: 12px;
+  border-radius: 5px;
   margin: 0.2rem;
   span {
     grid-column: 1;
