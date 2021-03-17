@@ -7,12 +7,12 @@ const checkVictory = (
   totalMines: number,
   handleGameStatus: (status: string) => void,
 ): void => {
-  const countFlaggedMiles = board.map(row => {
+  const countFlaggedMines = board.map(row => {
     return row.filter(item => {
       return item.isBomb && item.flagged
     }).length
   })
-  const flaggedMines = countFlaggedMiles.reduce(
+  const flaggedMines = countFlaggedMines.reduce(
     (accumulator, current) => accumulator + current,
   )
 
