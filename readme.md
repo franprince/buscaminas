@@ -7,8 +7,8 @@ Mi primer proyecto en TS! Es una réplica del buscaminas tradicional.
 ### NextJS
 
 En el tiempo que llevo estudiando React, [NextJS](https://nextjs.org/) casi
-siempre fue la basde de mis proyectos. Lo elegí porque estoy familiarizado con
-la configuración.
+siempre fue la base de mis proyectos. Lo elegí porque estoy familiarizado con la
+configuración.
 
 ### Emotion
 
@@ -58,6 +58,6 @@ corrobora todo lo que está listado arriba antes de aceptar un commit.
 
 Algunos screenshots de la aplicación:
 
-![Screenshot del estado inicial del juego](./Screenshot-buscaminas.png)
-![Screenshot de una partida en curso](./Screenshot-partidaempezada.png)
-![Screenshot del juego cuando perdés](./Screenshot-perdiste.png)
+![Screenshot del estado inicial del juego](/public/img/Screenshot-buscaminas.png)
+![Screenshot de una partida en curso](/public/img/Screenshot-partidaempezada.png)
+![Screenshot del juego cuando perdés](/public/img/Screenshot-perdiste.png)
